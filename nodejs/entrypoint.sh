@@ -10,7 +10,7 @@ node -v
 
 # Replace Startup Variables
 MODIFIED_STARTUP=$(echo -e ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')
-echo ":/home/container$ ${MODIFIED_STARTUP}"
-
-# Run the Server
-eval ${MODIFIED_STARTUP}
+printf "\033[1m\033[33mcontainer@tamhost~ \033[0m%s\n" "$MODIFIED_STARTUP"
+echo "$MODIFIED_STARTUP"
+# shellcheck disable=SC2086
+eval "$MODIFIED_STARTUP"
