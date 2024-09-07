@@ -40,4 +40,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/TamHost/docker-images:java_${{ matrix.tag }}
+            ghcr.io/tamhost/docker-images:java_${{ matrix.tag }}
