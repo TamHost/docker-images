@@ -7,11 +7,11 @@ LABEL       author="Alexander Ballauf" maintainer="admin@ballaual.de"
 LABEL       org.opencontainers.image.description SteamRT3 Platform image for Pterodactyl Source engine servers. 
 
 ## install required packages
-RUN         dpkg --add-architecture i386
-RUN         apt-get update
-RUN         apt-get upgrade -y
-RUN         apt-get install -y tar curl gcc g++ lib32gcc-s1 libgcc1 libcurl4-gnutls-dev:i386 libssl1.1:i386 libcurl4:i386 libcurl3-gnutls:i386 lib32tinfo6 libtinfo6:i386 lib32z1 lib32stdc++6 libncurses5:i386 libcurl3-gnutls:i386 libsdl2-2.0-0:i386 libsdl2-2.0-0 iproute2 gdb libsdl1.2debian libfontconfig1 telnet net-tools netcat tzdata numactl xvfb tini libc6
-RUN         useradd -m -d /home/container container
+RUN         dpkg --add-architecture i386 \
+            && apt-get update \
+            && apt-get upgrade -y \
+            && apt-get install -y tar curl gcc g++ lib32gcc-s1 libgcc1 libcurl4-gnutls-dev:i386 libssl1.1:i386 libcurl4:i386 lib32tinfo6 libtinfo6:i386 lib32z1 lib32stdc++6 libncurses5:i386 libcurl3-gnutls:i386=7.74.0-1.3+steamrt3.2+deb11u11 libsdl2-2.0-0:i386 libsdl2-2.0-0 iproute2 gdb libsdl1.2debian libfontconfig1 telnet net-tools netcat tzdata numactl xvfb tini libc6 \
+            && useradd -m -d /home/container container
 
 ## install rcon
 RUN         cd /tmp/ \
