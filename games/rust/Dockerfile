@@ -9,7 +9,6 @@ RUN  apt install -y lib32gcc-s1 lib32stdc++6 unzip curl iproute2 tzdata libgdipl
 RUN  curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 RUN  apt install -y nodejs
 RUN  mkdir /node_modules
-RUN  npm install --prefix / ws
 RUN  useradd -d /home/container -m container
 
 USER 		container
