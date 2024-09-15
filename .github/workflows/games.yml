@@ -18,6 +18,7 @@ jobs:
         game:
           - minetest
           - mta
+          - rust
     steps:
       - uses: actions/checkout@v4
       - name: Set up QEMU
